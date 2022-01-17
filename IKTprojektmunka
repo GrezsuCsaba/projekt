@@ -1,1 +1,83 @@
+#Definiáljon egy tömböt a következő nevekkel: Gábor, Pista, Réka, Bálint, Jázmin, Dóra.
+#Definiáljon még egy tömböt a hozzájuk tartozó nyelvvizsgaszázalékokkal. Pl.: 85, 73, 91, 52, 65, 48.
 
+#1.- Írjon atlag néven függvényt, mely a nyelvvizsgaszázalékok átlagával tér vissza! Az eredményt jelenítse meg a konzolon!
+'''nevek = ["Gábor", "Pista", "Réka", "Bálint", "Jázmin", "Dóra"]
+nyelvvizs = [85, 73, 91, 52, 65, 48]
+
+def atlag(nyelvvizs):
+    atl = 0
+    for i in nyelvvizs:
+        atl += i
+    atl = atl/len(nyelvvizs)
+    return atl
+
+e = atlag(nyelvvizs)
+print(e)'''
+
+#2.- Írjon vanesikertelen néven függvényt, és állapítsa meg, hogy van-e olyan diák, akinek nem sikerült a nyelvvizsgája (az első találatot). Ha van, a diák nevét írja ki a konzolra, ha nincs, akkor a következő szöveget „Minden diák sikeres vizsgát tett.” A sikeres nyelvvizsga feltétele minimum 60%.
+'''def vanesikertelen(nyelvvizs, nevek):
+    jo = 0
+    for i in nyelvvizs:
+        if i / 100 <= 0.6:
+            print(nevek[nyelvvizs.index(i)])
+            break
+        else:
+            len(nyelvvizs) / 100 >= 0.6
+            jo += 1
+        if jo == len(nyelvvizs):
+            print("Minden diák sikeres vizsgát tett.")
+        
+    i = 0 #Tanár m.o.
+
+    while(nyelvvizs[i] >= 60 and i < len(nyelvvizs)-1):
+            i += 1
+    if (nyelvvizs[i] < 60):
+        print(nevek[i] + ": " + str(nyelvvizs[i]))
+    else:
+        print("Minden diák sikeres vizsgát tett.")
+
+vanesikertelen(nyelvvizs, nevek)'''
+
+# 3. Írjon sikertelen néven függvény, és számolja össze, hogy hány embernek nem sikerült a nyelvvizsgája! Az eredménnyel térjen vissza, majd írassa ki konzolra.
+
+'''def sikertelen(nyelvvizs, nevek):
+    rossz = 0
+    for i in nyelvvizs:
+        if i / 100 < 0.6:
+            rossz += 1
+    return rossz
+
+
+rosszak = sikertelen(nyelvvizs, nevek)
+print(rosszak, "embernek nem sikerült a nyelvvizsga.")'''
+            
+
+
+# 4. Válogassa szét az eredményeke aszerint, hogy sikerült-e a nyelvvizsga van nem. Hozzon létre két tömböt, az egyikbe azok a nevek kerüljenek, akiknek sikerült, a másikba azok, akiknek nem sikerült. A feladatot a valogatas nevű függvénybe írja!
+
+'''def valogatas():
+    r = []
+    j = []
+    for i in nyelvvizs:
+        if i <= 60:
+            r.append(nevek[nyelvvizs.index(i)])
+        else:
+            len(nyelvvizs) >= 60
+            j.append(nevek[nyelvvizs.index(i)])
+    print("Sikertelen:", str(r) + "\n" + "Sikeres:", j)
+
+valogatas()'''
+
+# 5. Írassa ki, a kivalo függvény segítségével, hogy ki érte el a legmagasabb százalékot! A képernyőn mindkét adat (név, százalék), jelenjen meg.      
+
+'''def kivalo(nevek, nyelvvizs):
+    maxi = nyelvvizs[0]
+    for i in nyelvvizs:
+        if maxi < i:
+            maxi = i
+        else:
+            maxi = maxi
+    print(nevek[nyelvvizs.index(maxi)], ":", maxi)
+
+kivalo(nevek, nyelvvizs)'''
